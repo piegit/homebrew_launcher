@@ -17,8 +17,6 @@
 #ifndef _APPLICATION_H
 #define _APPLICATION_H
 
-#include "menu/MainWindow.h"
-#include <video/CVideo.h>
 #include <system/CThread.h>
 #include "gui/ControllerBase.h"
 
@@ -35,17 +33,6 @@ public:
             delete applicationInstance;
             applicationInstance = NULL;
         }
-    }
-
-    CVideo *getVideo(void) const {
-        return video;
-    }
-    MainWindow *getMainWindow(void) const {
-        return mainWindow;
-    }
-
-    GuiSound *getBgMusic(void) const {
-        return bgMusic;
     }
 
     int exec(void);
@@ -65,10 +52,6 @@ private:
 
     void executeThread(void);
 
-    GuiSound *bgMusic;
-    CVideo *video;
-    MainWindow *mainWindow;
-    ControllerBase *controller[5];
     int exitCode;
 };
 
